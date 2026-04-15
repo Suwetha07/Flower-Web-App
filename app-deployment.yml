@@ -30,7 +30,7 @@ spec:
             limit:
               cpu: "200Mi"
               memory: "512Mi"
-          envFrom
+          envFrom:
             - configMapRef: 
               name: flower-configmap
             - secretsRef
