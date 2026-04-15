@@ -27,13 +27,13 @@ spec:
             requests:
               cpu: "100m"
               memory: "256Mi"
-            limit:
+            limits:
               cpu: "200m"
               memory: "512Mi"
           envFrom:
-            - configMapRef: 
+          - configMapRef: 
               name: flower-configmap
-            - secretRef:
+          - secretRef:
               name: flower-secrets
           # env:
           # - name: MONGO_URI
