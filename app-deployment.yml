@@ -11,9 +11,9 @@ spec:
     maxUnavailable: 1
     maxSurge: 1
   selector:
-    matchLables:
+    matchLabels:
       label: flower-app
-  templates:
+  template:
     metadata:
       label:
        app: flower-app
