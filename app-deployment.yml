@@ -15,14 +15,14 @@ spec:
       label: flower-app
   template:
     metadata:
-      label:
+      labels:
        app: flower-app
     spec:
       containers:
         - name: flowerimage
           image: suwetha07/flowerwebapp:v1.1.0
-          port:
-            - containerPort: 3000
+          ports:
+            - containerPort: 3015
           resources:
             requests:
               cpu: "100Mi"
@@ -38,8 +38,8 @@ metadata:
   namespace: suwetha-ns
 spec:
   selector:
-    label: flower-app
+    app: flower-app
   ports:
     - port: 80
-    targetPort: 3015
+      targetPort: 3015
   type: NodePort
