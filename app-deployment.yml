@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flowerapp
+  namespace: suwetha-ns 
+spec:
+  replicas: 1
+  strategy: RollingUpdate
+  type: rollingUpdate
+    maxUnavailable: 1
+    maxSurge: 1
+  selector:
+    matchLables:
+      label: flower-app
+  templates:
+    metadata:
+      label:
+       app: flower-app
+    spec:
+      containers:
+        - name: flowerimage
+          image: suwetha07/flowerwebapp:v1.1.0
+          port:
+            - containerPort: 3000
+      requests:
+        resources:
+          cpu: "100Mi"
+          memory: "256Mi"
+        limit:
+          cpu: "200Mi"
+          memory: "512Mi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: flower-Service
+  namespace: suwetha-ns
+spec:
+  selector:
+    label: flower-app
+  ports:
+    - port: 80
+    targetPort: 3015
+  type: NodePort
