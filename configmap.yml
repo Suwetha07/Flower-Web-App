@@ -4,5 +4,5 @@ metadata:
   name: flower-configMap
   namespace: suwetha-ns
 data:
-  MONGO_URI=mongodb://mongodb:27017/AFF-Docker
-  PORT=3015
+  MONGO_URI: mongodb://mongodb:27017/AFF-Docker
+  PORT: 3015
