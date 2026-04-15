@@ -33,7 +33,7 @@ spec:
           envFrom:
             - configMapRef: 
               name: flower-configmap
-            - secretsRef
+            - secretRef
               name: flower-secrets
           # env:
           # - name: MONGO_URI
