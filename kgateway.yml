@@ -1,0 +1,15 @@
+apiVersion: gatewaygit.networking.k8s.io/v1
+kind: Gateway 
+metadata:
+  name: flowerapp-gateway
+  namespace: suwetha-ns
+spec:
+  gatewayClassName: kgateway
+  listeners:
+    - name: http
+      portocol: HTTP 
+      port: 80
+      allowedRoutes:
+        namespaces:
+          from: Same
+  
