@@ -23,8 +23,8 @@ spec:
           image: suwetha07/flowerwebapp:v1.1.0
           port:
             - containerPort: 3000
-      requests:
-        resources:
+      resources:
+        requests:
           cpu: "100Mi"
           memory: "256Mi"
         limit:
