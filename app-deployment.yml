@@ -5,8 +5,9 @@ metadata:
   namespace: suwetha-ns 
 spec:
   replicas: 1
-  strategy: RollingUpdate
-  type: rollingUpdate
+  strategy: 
+  type: RollingUpdate
+  rollingUpdate:
     maxUnavailable: 1
     maxSurge: 1
   selector:
