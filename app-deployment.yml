@@ -12,7 +12,7 @@ spec:
       maxSurge: 1
   selector:
     matchLabels:
-      label: flower-app
+      app: flower-app
   template:
     metadata:
       labels:
