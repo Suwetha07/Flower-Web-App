@@ -30,6 +30,27 @@ spec:
             limit:
               cpu: "200Mi"
               memory: "512Mi"
+          envFrom
+            - configMapRef: 
+              name: flower-configmap
+            - secretsRef
+              name: flower-Secrets
+          # env:
+          # - name: MONGO_URI
+          #   valueFrom:
+          #     configMapKeyRef:
+          #       name: flower-configmap
+          #       key:  MONGO_URI
+          # - name: PORT
+          #   valueFrom:
+          #     configMapKeyRef:
+          #       name: flower-configmap
+          #       key:  PORT
+          # - name: SESSION_SECRET
+          #   valueFrom:
+          #     secretKeyRef:
+          #     name: flower-secret
+          #     key: SESSION_SECRET
 ---
 apiVersion: v1
 kind: Service
